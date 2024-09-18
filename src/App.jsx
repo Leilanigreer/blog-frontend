@@ -14,40 +14,55 @@ function Footer() {
   )
 }
 
+function PostsNew() {
+  return (
+    <div id="posts-new">
+      <h1>New post</h1>
+      <body>
+      <form>
+        {/*labels are used to make the form more clear and for screen readers (software that reads web pages for people who can’t see) */}
+        <label for="title">Title:</label> 
+        <input type="text" id="title" name="title"/>
+        <br></br>
+        <label for="body">Boby:</label>
+        <input type="text" id="body" name="body"/>
+        <br></br>
+        Image: <input type="text" />
+        <br></br>
+        <button type="submit">Create Blog</button>
+      </form>
+      </body>
+    </div>
+  )
+}
+
+// I need to add more to this:
+function PostsIndex() {
+  return (
+    <div id="posts-index">
+    <h1>All posts</h1>
+    <h2>Much to do about nothing</h2>
+    <body> Do you know what this is about?</body>
+  </div>
+  )
+}
+
+function PostsPage() {
+  return (
+    <main>
+      <PostsNew />
+      <PostsIndex />
+    </main>
+  )
+}
+
 
 function App() {
   return (
     <div>
       <Header />
-
-      {/* <Footer /> */}
-
-      <div id="posts-new">
-        <h1>New post</h1>
-        <body>
-        <form>
-          {/*labels are used to make the form more clear and for screen readers (software that reads web pages for people who can’t see) */}
-          <label for="title">Title:</label> 
-          <input type="text" id="title" name="title"/>
-          <br></br>
-          <label for="body">Boby:</label>
-          <input type="text" id="body" name="body"/>
-          <br></br>
-          Image: <input type="text" />
-          <br></br>
-          <button type="submit">Create Blog</button>
-        </form>
-        </body>
-      </div>
-
-      <div id="posts-index">
-        <h1>All posts</h1>
-        <h2>Much to do about nothing</h2>
-        <body> Do you know what this is about?</body>
-        
-      </div>
-
-
+      <PostsPage />
+      <Footer />
     </div>
   );
 }
