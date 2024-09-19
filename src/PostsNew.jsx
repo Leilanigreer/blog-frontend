@@ -11,12 +11,15 @@ export function PostsNew() {
           <label for="body">Boby:</label>
           <input type="text" id="body" name="body" />
           <br></br> */}
+          <div>
           Title: <input type="text" />
-          <br></br>
+          </div>
+          <div>
           Body: <input type="text" />
-          <br></br>
+          </div>
+          <div>
           Image: <input type="text" />
-          <br></br>
+          </div>
           <button type="submit">Create Blog</button>
         </form>
       </body>

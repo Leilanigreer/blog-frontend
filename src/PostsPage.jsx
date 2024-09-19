@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { PostsIndex } from "./PostsIndex";
 import { PostsNew } from "./PostsNew";
 
@@ -13,11 +13,14 @@ export function PostsPage() {
       setPosts(response.data)
     })
   }
+
+   useEffect(handleIndex, []) 
+
   return (
     <main>
       <PostsNew />
       <PostsIndex posts={posts} />
-      <button onClick={handleIndex}>get my posts</button>
+      {/* <button onClick={handleIndex}>get my posts</button> */}
     </main>
   );
 }
