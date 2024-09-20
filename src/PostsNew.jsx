@@ -2,7 +2,7 @@ export function PostsNew() {
   return (
     <div id="posts-new">
       <h1>New post</h1>
-      <body>
+      <div>
         <form>
           {/*labels are used to make the form more clear and for screen readers (software that reads web pages for people who can’t see) */}
           {/* <label for="title">Title:</label>
@@ -22,7 +22,7 @@ export function PostsNew() {
           </div>
           <button type="submit">Create Blog</button>
         </form>
-      </body>
+      </div>
     </div>
   );
 }

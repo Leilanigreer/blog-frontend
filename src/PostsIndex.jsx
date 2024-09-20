@@ -1,5 +1,5 @@
 export function PostsIndex(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <div id="posts-index">
       <h1>All posts</h1>
@@ -9,7 +9,7 @@ export function PostsIndex(props) {
           <h2>{post.title}</h2>
           <p>{post.body}</p>
           <img src={post.image} alt="" />
-          <button onClick={props.onShow}>Read</button>
+          <button onClick={() => props.onShow(post)}>Read</button>
         </div>
       ))}
       </div>

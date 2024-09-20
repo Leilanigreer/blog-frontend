@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { PostsIndex } from "./PostsIndex";
 import { PostsNew } from "./PostsNew";
 import { Modal } from "./Modal";
+import {PostsShow} from "./PostsShow";
 
 export function PostsPage() {
   // var name = "Leilani";
@@ -13,12 +14,15 @@ export function PostsPage() {
       console.log(response);
       setPosts(response.data)
     })
-  }
-  const [isPostShowVisible, setIsPostShowVisible] = useState(false);
+  };
 
-  const handleShow = () => {
+  const [isPostShowVisible, setIsPostShowVisible] = useState(false);
+  const [currentPost, setCurrentPost] = useState();
+  
+  const handleShow = (post) => {
     setIsPostShowVisible(true);
-    // console.log("Show")
+    setCurrentPost(post)
+    console.log(post)
   };
 
   const handleClose = () => {
@@ -33,9 +37,7 @@ export function PostsPage() {
       <PostsNew />
       <PostsIndex posts={posts} onShow={handleShow}/>
       <Modal show={isPostShowVisible} onClose={handleClose}>
-        <h1>Hello Brian</h1>
-        <p>I am trying to pass the time.</p>
-        <h2>Whatever I write shows in the modal</h2>
+        <PostsShow post={currentPost}/>
       </Modal>
 
     </main>
