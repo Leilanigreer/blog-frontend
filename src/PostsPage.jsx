@@ -14,17 +14,30 @@ export function PostsPage() {
       setPosts(response.data)
     })
   }
+  const [isPostShowVisible, setIsPostShowVisible] = useState(false);
+
+  const handleShow = () => {
+    setIsPostShowVisible(true);
+    // console.log("Show")
+  };
+
+  const handleClose = () => {
+    setIsPostShowVisible(false);
+    // console.log("hide")
+  };
 
    useEffect(handleIndex, []) 
 
   return (
     <main>
       <PostsNew />
-      <PostsIndex posts={posts} />
-      <Modal show={true}>
-        <p>TEST</p>
+      <PostsIndex posts={posts} onShow={handleShow}/>
+      <Modal show={isPostShowVisible} onClose={handleClose}>
+        <h1>Hello Brian</h1>
+        <p>I am trying to pass the time.</p>
+        <h2>Whatever I write shows in the modal</h2>
       </Modal>
-      {/* <button onClick={handleIndex}>get my posts</button> */}
+
     </main>
   );
 }
