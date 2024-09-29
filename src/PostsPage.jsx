@@ -4,6 +4,9 @@ import { PostsIndex } from "./PostsIndex";
 import { PostsNew } from "./PostsNew";
 import { Modal } from "./Modal";
 import {PostsShow} from "./PostsShow";
+import {LoginPage} from "./LoginPage"
+import {SignupPage} from "./SignupPage"
+
 
 export function PostsPage() {
   // var name = "Leilani";
@@ -42,6 +45,8 @@ export function PostsPage() {
 
   return (
     <main>
+      <SignupPage />
+      <LoginPage />
       <PostsNew onCreate={handleCreate}/>
       <PostsIndex posts={posts} onShow={handleShow}/>
       <Modal show={isPostShowVisible} onClose={handleClose}>
