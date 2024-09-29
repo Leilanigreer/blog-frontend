@@ -44,9 +44,9 @@ export function PostsPage() {
    useEffect(handleIndex, []) 
 
   return (
-    <main>
-      <SignupPage />
-      <LoginPage />
+    <main id="posts-page">
+      {/* <SignupPage /> */}
+      {/* <LoginPage /> */}
       <PostsNew onCreate={handleCreate}/>
       <PostsIndex posts={posts} onShow={handleShow}/>
       <Modal show={isPostShowVisible} onClose={handleClose}>
