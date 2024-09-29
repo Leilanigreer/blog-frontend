@@ -19,12 +19,12 @@ export function PostsPage() {
     })
   };
 
-    const handleCreate = (params) => {
-      axios.post("http://localhost:3000/posts.json", params).then(response => {
-        console.log(response.data)
-        setPosts([...posts, response.data])
-    })
-  };
+    // const handleCreate = (params) => {
+    //   axios.post("http://localhost:3000/posts.json", params).then(response => {
+    //     console.log(response.data)
+    //     setPosts([...posts, response.data])
+    // })
+  // };
        
 
   const [isPostShowVisible, setIsPostShowVisible] = useState(false);
@@ -47,7 +47,7 @@ export function PostsPage() {
     <main id="posts-page">
       {/* <SignupPage /> */}
       {/* <LoginPage /> */}
-      <PostsNew onCreate={handleCreate}/>
+      {/* <PostsNew onCreate={handleCreate}/> */}
       <PostsIndex posts={posts} onShow={handleShow}/>
       <Modal show={isPostShowVisible} onClose={handleClose}>
         <PostsShow post={currentPost}/>
