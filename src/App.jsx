@@ -8,6 +8,8 @@ import { PostsNewPage } from "./PostsNewPage"
 import {PostsIndexPage} from "./PostsIndexPage"
 import { Footer } from "./Footer";
 import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 const router = createBrowserRouter([
   {
@@ -45,7 +47,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+  <div className="container">
+  <RouterProvider router={router} />
+  </div>
+  )
 }
 
 export default App;
